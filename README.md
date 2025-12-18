@@ -17,12 +17,12 @@ Ce projet est une démonstration technique d'une architecture **100% Client-Side
   - Statistiques en temps réel (nombre de mots, mots uniques, top mot).
 - **Export :** Téléchargement du nuage de mots au format PNG.
 
-## 🛠️ Stack Technique
+## Stack Technique
 
 - **Langages :** HTML5, CSS3, JavaScript.
 - **Librairies :** [wordcloud2.js](https://github.com/timdream/wordcloud2.js) (Rendu graphique).
 - **Architecture :** Frontend-only (Aucun backend / Serveur).
 
-## 📦 Installation & Utilisation
+## Installation & Utilisation
 
 Il suffit de cloner le projet et d'ouvrir le fichier `index.html` dans votre navigateur.
