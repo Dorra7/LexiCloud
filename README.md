@@ -25,4 +25,4 @@ Ce projet est une démonstration technique d'une architecture **100% Client-Side
 
 ## Installation & Utilisation
 
-Il suffit de cloner le projet et d'ouvrir le fichier `index.html` dans votre navigateur.
+Pour de meilleurs résultats, il est préférable d'installer l'extension Live Server de VSCode, et de cliquer sur Go Live en bas de l'écran pour lancer le projet.
