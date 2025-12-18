@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LexiCloud</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wordcloud2.js/1.2.2/wordcloud2.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <header>
+            <img src="./img/logo.png" alt="Logo Grain de Texte" id="mainLogo">
+        </header>
+
+        <section class="input-section panel">
+            <textarea id="zoneTexte" placeholder="Collez votre texte ou importez un fichier ici..."></textarea>
+            <div id="zoneLecture" class="hidden scrollable-content"></div>
+        </section>
+
+        <section class="toolbar-section">
+            <div class="file-group">
+                <label for="inputFichier" class="btn btn-secondary"> Importer un fichier</label>
+                <input type="file" id="inputFichier" accept=".txt">
+            </div>
+            <div class="action-group">
+                <button id="btnLancer" class="btn btn-primary">Générer le Nuage</button>
+                <button id="btnDownload" class="btn btn-secondary" disabled>Télécharger</button>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <div id="statsBar" class="stats-bar hidden">
+                <div class="stat-item">Total : <strong id="statTotal">0</strong></div>
+                <div class="stat-item">Uniques : <strong id="statUnique">0</strong></div>
+                <div class="stat-item">Top mot : <strong id="statTop">_</strong></div>
+            </div>
+
+            <div class="visual-panel panel">
+                <div id="canvas-container">
+                    <canvas id="canvasNuage"></canvas>
+                </div>
+                <p class="hint">Cliquez sur un mot pour le localiser dans le texte.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+:root {
+    /* Palette Sable / Sobre conservée */
+    --bg-color: #f7f5f2;
+    --panel-bg: #ffffff;
+    --primary: #c2a17a;
+    --primary-dark: #a88b68;
+    --text-main: #4a4a4a;
+    --text-light: #8c8c8c;
+    --border: #e6e2d3;
+    --highlight: #ffeeba;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    min-height: 100vh; /* Utilise au moins toute la hauteur */
+    display: flex;
+    justify-content: center;
+    padding: 20px 10px;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 900px; /* Un peu plus étroit pour une lecture verticale agréable */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --- HEADER & LOGO --- */
+header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#mainLogo {
+    max-height: 80px; /* Taille maîtrisée du logo */
+    width: auto;
+    margin-bottom: 10px;
+    /* Optionnel : petit effet d'ombre sur le logo */
+    filter: drop-shadow(0 2px 4px rgba(194, 161, 122, 0.2));
+}
+
+header p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+}
+
+/* --- STYLE GÉNÉRAL DES PANNEAUX --- */
+.panel {
+    background: var(--panel-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    overflow: hidden; /* Important pour les coins arrondis */
+}
+
+/* --- SECTION 2 : ZONE DE TEXTE CONTRAINTE --- */
+.input-section.panel {
+    /* C'EST ICI QUE SE JOUE LA VISIBILITÉ */
+    height: 200px; /* Hauteur fixe confortable */
+    max-height: 25vh; /* Ne dépasse jamais 25% de la hauteur d'écran */
+    display: flex;
+    flex-direction: column;
+}
+
+textarea, .scrollable-content {
+    width: 100%;
+    flex-grow: 1; /* Prend tout l'espace disponible dans le panneau */
+    border: none;
+    resize: none; /* Empêche l'utilisateur de casser le layout */
+    outline: none;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 15px;
+    color: var(--text-main);
+    background: transparent;
+    font-family: inherit;
+    /* GESTION DU SCROLL INTERNE */
+    overflow-y: auto; 
+}
+
+/* Scrollbar personnalisée (style sable) pour Webkit (Chrome/Safari) */
+textarea::-webkit-scrollbar, .scrollable-content::-webkit-scrollbar { width: 8px; }
+textarea::-webkit-scrollbar-track, .scrollable-content::-webkit-scrollbar-track { background: #f0eadd; }
+textarea::-webkit-scrollbar-thumb, .scrollable-content::-webkit-scrollbar-thumb { background-color: var(--primary); border-radius: 4px; }
+
+
+/* --- SECTION 3 : BARRE D'OUTILS --- */
+.toolbar-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 5px 0;
+}
+
+.file-group, .action-group {
+    display: flex;
+    gap: 10px;
+}
+
+input[type="file"] { display: none; }
+
+/* Styles des boutons (identiques à avant) */
+.btn {
+    padding: 12px 24px;
+    border-radius: 50px; /* Boutons pilules plus modernes */
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+    box-shadow: 0 4px 12px rgba(194, 161, 122, 0.4);
+}
+
+.btn-primary:hover { background-color: var(--primary-dark); transform: translateY(-2px); }
+
+.btn-secondary {
+    background-color: white;
+    border: 2px solid var(--border);
+    color: var(--text-main);
+}
+
+.btn-secondary:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); }
+.btn-secondary:disabled { opacity: 0.6; cursor: not-allowed; }
+
+
+/* --- SECTION 4 : RÉSULTATS --- */
+.results-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-grow: 1; /* Prend l'espace restant si l'écran est grand */
+}
+
+/* Barre de stats */
+.stats-bar {
+    background: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid var(--border);
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.stats-bar strong { color: var(--primary-dark); font-weight: 700; }
+.hidden { display: none !important; }
+
+/* Panneau visuel (Nuage) */
+.visual-panel {
+    padding: 20px;
+    text-align: center;
+    background-color: #fffcf8;
+    min-height: 400px; /* Hauteur minimale garantie pour le nuage */
+    display: flex;
+    flex-direction: column;
+}
+
+#canvas-container {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hint {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+mark {
+    background-color: var(--highlight);
+    color: #5d4037;
+    border-radius: 2px;
+    padding: 2px 0;
+    font-weight: 600;
+}
+
