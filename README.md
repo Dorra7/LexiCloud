@@ -1,10 +1,10 @@
-# ☁️ JS WordCloud Generator
+# LexiCloud
 
 Une application web interactive et autonome permettant de transformer instantanément des textes bruts en nuages de mots visuels.
 
-Ce projet est une démonstration technique d'une architecture **100% Client-Side** : tout le traitement (nettoyage, analyse algorithmique, rendu graphique) s'effectue directement dans le navigateur de l'utilisateur, garantissant rapidité et confidentialité des données.
+Ce projet est une démonstration technique d'une architecture **100% Client-Side** : tout le traitement (nettoyage, analyse, visualisation graphique) s'effectue directement dans le navigateur de l'utilisateur, garantissant rapidité et confidentialité des données.
 
-## 🚀 Fonctionnalités Clés
+## Fonctionnalités Clés
 
 - **Import Flexible :** Support du copier-coller et de l'import de fichiers `.txt`.
 - **Traitement Algorithmique :**
